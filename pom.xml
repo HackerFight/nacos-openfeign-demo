@@ -70,10 +70,24 @@
             </exclusions>
         </dependency>
 
-        <!-- 这里我导入 spring-cloud-starter-loadbalancer 就不行... -->
+        <!--
+            而且这个必须得导入，否则使用feign的模块(logistics)启动报错，错误信息如下
+            【Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name
+             'com.qiuguan.boot.cloud.client.PayClient': Unexpected exception during bean creation;
+             nested exception is java.lang.IllegalStateException: No Feign Client for loadBalancing defined.
+             Did you forget to include spring-cloud-starter-loadbalancer?】
+
+             很明显是需要导入spring-cloud-starter-loadbalancer模块，不是说feign已经集成了ribbon吗？
+             这是因为 SpringCloud Feign在Hoxton.M2 RELEASED版本之后不再使用Ribbon而是使用spring-cloud-loadbalancer，
+             所以需要引入 spring-cloud-loadbalancer 模块。
+             】
+
+             我先导入 spring-cloud-starter-loadbalancer 启动不起来，导入 spring-cloud-loadbalancer 就可以
+             后面使用 spring-cloud-starter-loadbalancer 又行了。。。
+        -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-loadbalancer</artifactId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
         </dependency>
 
 
