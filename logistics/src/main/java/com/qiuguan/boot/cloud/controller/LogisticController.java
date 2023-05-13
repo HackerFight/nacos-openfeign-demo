@@ -29,7 +29,7 @@ public class LogisticController {
         return payClient.list();
     }
 
-    @RequestMapping("/consumer/call2.pay")
+    @RequestMapping("/consumer/call.pay2")
     public String call2Provider() {
         return pay2Client.list();
     }

@@ -9,7 +9,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  * @author qiuguan
  */
 @EnableDiscoveryClient
-@EnableFeignClients(basePackages = "com.qiuguan.boot.cloud.client")
+@EnableFeignClients(basePackages = {"com.qiuguan.boot.cloud.client"})
 @SpringBootApplication
 public class LogisticMainApplication {
 
