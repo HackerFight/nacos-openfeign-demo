@@ -1,0 +1,9 @@
+/Users/qiuguan/workspace/nacos-openfeign-demo/logistics/src/main/java/com/qiuguan/boot/cloud/fallback/MockServerFallback.java
+/Users/qiuguan/workspace/nacos-openfeign-demo/logistics/src/main/java/com/qiuguan/boot/cloud/controller/MockController.java
+/Users/qiuguan/workspace/nacos-openfeign-demo/logistics/src/main/java/com/qiuguan/boot/cloud/config/FeignLogConfig.java
+/Users/qiuguan/workspace/nacos-openfeign-demo/logistics/src/main/java/com/qiuguan/boot/cloud/LogisticMainApplication.java
+/Users/qiuguan/workspace/nacos-openfeign-demo/logistics/src/main/java/com/qiuguan/boot/cloud/controller/LogisticController.java
+/Users/qiuguan/workspace/nacos-openfeign-demo/logistics/src/main/java/com/qiuguan/boot/cloud/client/Pay2Client.java
+/Users/qiuguan/workspace/nacos-openfeign-demo/logistics/src/main/java/com/qiuguan/boot/cloud/config/CdbClientConfig.java
+/Users/qiuguan/workspace/nacos-openfeign-demo/logistics/src/main/java/com/qiuguan/boot/cloud/client/MockClient.java
+/Users/qiuguan/workspace/nacos-openfeign-demo/logistics/src/main/java/com/qiuguan/boot/cloud/client/PayClient.java

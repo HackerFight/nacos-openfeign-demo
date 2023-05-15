@@ -1,0 +1,10 @@
+com/qiuguan/boot/cloud/controller/MockController.class
+com/qiuguan/boot/cloud/controller/LogisticController.class
+com/qiuguan/boot/cloud/client/Pay2Client.class
+com/qiuguan/boot/cloud/client/PayClient.class
+com/qiuguan/boot/cloud/LogisticMainApplication.class
+com/qiuguan/boot/cloud/config/FeignLogConfig.class
+com/qiuguan/boot/cloud/client/MockClient.class
+com/qiuguan/boot/cloud/fallback/MockServerFallback.class
+com/qiuguan/boot/cloud/config/CdbClientConfig$1.class
+com/qiuguan/boot/cloud/config/CdbClientConfig.class

@@ -1,0 +1,44 @@
+server:
+  port: 8082
+
+
+spring:
+  application:
+    name: logistic-application
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 47.96.111.179:8848   #通过 47.96.111.179:8848/nacos/ 访问
+        service: ${spring.application.name}
+#    circuit:  请看：EnableCircuitBreakerImportSelector 注意导入 hystrix 依赖
+#      breaker:
+#        enabled: true
+
+
+#需要设置打印的Feign接口。Feign为每个客户端创建一个logger。默认情况下，logger的名称是Feigh接口的完整类名。
+#需要注意的是，Feign的日志打印只会对DEBUG级别做出响应
+logging:
+  level:
+    com.qiuguan.boot.cloud.client: DEBUG
+
+#设置超时时间
+feign:
+  client:
+    config:
+      default:
+        ConnectTimeOut: 3000
+        ReadTimeOut: 3000
+  circuitbreaker:   #开启hystrix，为什么hystrix的开启不放到hystrix开头的配置中呢？我看HystrixCommandProperties类中也有相关配置
+    enabled: true
+
+
+#hystrix超时熔断
+#hystrix:
+#  command:
+#    default: #表示任意接口，还可以指定具体的接口名
+#      execution:
+#        timeout:
+#          enabled: true  #默认就是开启
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 3000  #如果3s钟没有返回，则超时
