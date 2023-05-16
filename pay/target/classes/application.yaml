@@ -1,0 +1,12 @@
+server:
+  port: 8081
+
+
+spring:
+  application:
+    name: pay-application
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 47.96.111.179:8848  #通过 47.96.111.179:8848/nacos/ 访问
+        service: ${spring.application.name}

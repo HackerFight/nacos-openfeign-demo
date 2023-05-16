@@ -19,6 +19,8 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <spring.boot.version>2.6.1</spring.boot.version>
+        <spring-cloud.version>2021.0.0</spring-cloud.version>
+        <spring-cloud-alibaba.version>2021.0.5.0</spring-cloud-alibaba.version>
     </properties>
 
     <dependencyManagement>
@@ -34,7 +36,7 @@
              <dependency>
                  <groupId>org.springframework.cloud</groupId>
                  <artifactId>spring-cloud-dependencies</artifactId>
-                 <version>2021.0.0</version>
+                 <version>${spring-cloud.version}</version>
                  <type>pom</type>
                  <scope>import</scope>
              </dependency>
@@ -42,7 +44,7 @@
              <dependency>
                  <groupId>org.springframework.cloud</groupId>
                  <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                 <version>0.2.2.RELEASE</version>
+                 <version>${spring-cloud-alibaba.version}</version>
                  <type>pom</type>
                  <scope>import</scope>
              </dependency>
@@ -99,7 +101,12 @@
         </dependency>
 
 
-        <!-- nacos 2.0 版本后增加了GRPC通信，启动时报错，所以这里使用低版本的客户端 -->
+        <!--
+          nacos 2.0 版本后增加了GRPC通信，需要开放出 9848和9849两个端口，不然启动时报错，我这这里使用低版本的客户端
+          主要是spring-cloud-alibaba-dependencies 使用的也是低版本
+
+          在高版本中，spring-cloud-starter-alibaba-nacos-discovery 内部集成了 nacos-client
+        -->
         <dependency>
             <groupId>com.alibaba.nacos</groupId>
             <artifactId>nacos-client</artifactId>
